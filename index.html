@@ -39,10 +39,11 @@
                         v-model.trim="inputValue"
                         @keyup.enter="addTask()">
                     </div>
-                    <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="col-2 d-flex justify-content-center align-items-center gap-2">
                         <button type="button" class="btn btn-primary" @click="addTask()">
                         Aggiungi
                         </button>
+                        <i class="fa-solid fa-arrow-left arrow"></i>
                     </div>
                 </div>
                 <!-- CARD BODY -->
@@ -68,7 +69,7 @@
                         </li>
                     </ul>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
 
