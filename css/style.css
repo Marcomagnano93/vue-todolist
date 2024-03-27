@@ -5,8 +5,19 @@ ul {
 
 li {
     cursor: pointer;
+    font-size: 24px;
+   
 }
 
 input{
     width: 100%;
+}
+
+li i{
+    font-size: 24px;
+    color: red;
+}
+
+header {
+    background-color: rgb(0, 153, 255);
 }
