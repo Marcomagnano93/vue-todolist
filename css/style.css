@@ -13,13 +13,23 @@ input{
     width: 100%;
 }
 
-li i{
+.red{
     font-size: 24px;
-    color: red;
+    color: rgb(210, 42, 42);
+}
+
+.green{
+    font-size: 24px;
+    color: rgb(31, 180, 31);
+    
 }
 
 header {
     background-color: rgb(0, 153, 255);
+}
+
+header i {
+    font-size: 32px;
 }
 
 .arrow {

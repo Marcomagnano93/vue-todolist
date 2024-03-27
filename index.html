@@ -24,12 +24,16 @@
 <div id="app">
     <header class="py-3">
         <div class="container-fluid">
-            <h1 class="text-center">To Do List</h1>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <i class="fa-solid fa-pencil"></i>
+                <h1>To Do List</h1>
+            </div>
+            
         </div>
     </header>
     <main class="my-2">
         <div class="container">
-            <div class="card">
+            <section class="card">
                 <!-- CARD INPUT & BUTTON -->
                 <div class="card-header d-flex">
                     <div class="col-10 d-flex justify-content-center align-items-center">
@@ -52,26 +56,49 @@
                     <ul>
                         <li
                         v-for="(el,i) in toDoList"
-                        @click="removeTask(i)"
                         >
-                        <i class="fa-solid fa-square-xmark"></i>
+                        
+                        <i 
+                        :class="addDecoration(el)"
+                        @click="taskCompleted(el)"
+                        class="fa-solid fa-square-check green mx-2"></i>
+                        <i @click="removeTask(i)" class="fa-solid fa-square-xmark red"></i>
                         </li>
+                        
                     </ul>
                         <!-- to do list components -->
                     <ul>
                         <li 
+                        v-if="toDoList.length !== 0"
                         v-for="(task,i) in toDoList"
                         :class="addDecoration(task)"
                         @click="taskCompleted(task)"
                         >
                             {{ task.text }}
-                            
+                        
+                        </li>
+                        <li v-else>
+                            Non ci sono task da completare...
                         </li>
                     </ul>
                 </div>
-            </div>
+            </section>
+            <!-- istruction section -->
+            <section class="card my-4 w-25">
+                <div class="card-header text-center">
+                    <div class="card-title">Istruzioni</div>
+                </div>
+                <div class="card-body">
+                    <p>Clicca su <button type="button" class="btn btn-primary">
+                        Aggiungi
+                        </button> per aggiungere la tua task</p>
+                    <p>Clicca su <i class="fa-solid fa-square-check green"></i> o direttamente sul testo per etichettare la tua task completata</p>
+                    <p>Clicca su <i class="fa-solid fa-square-xmark red"></i> per cancellare una task dalla tua lista</p>
+                </div>
+            </section>
         </div>
     </main>
+    
 
 </div>
 <script src="./js/app.js"></script>
