@@ -25,6 +25,9 @@ createApp({
         if(i.done === true)
            return "text-decoration-line-through"
         
+    },
+    taskCompleted(i) {
+        this.toDoList.splice(i, 1)
     }
   }
 }).mount('#app')

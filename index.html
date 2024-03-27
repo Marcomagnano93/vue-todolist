@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDoList</title>
     <link rel="stylesheet" href="./css/style.css">
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -24,21 +24,28 @@
     <main>
         <div class="container">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body d-flex">
                     <ul>
+                        <!-- X components -->
+                        <li
+                        v-for="(el,i) in toDoList"
+                        @click="taskCompleted(i)"
+                        >
+                            <span id="x">X</span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <!-- to do list components -->
                         <li 
-                        
                         v-for="(task,i) in toDoList"
                         :class="addDecoration(task)"
                         >
                             {{ task.text }}
                             
                         </li>
-
                     </ul>
                 </div>
-            </div>
-            
+            </div> 
         </div>
     </main>
 
