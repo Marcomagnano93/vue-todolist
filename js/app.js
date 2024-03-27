@@ -10,7 +10,7 @@ createApp({
         },
         {
             text: "Fai i compiti",
-            done: true
+            done: false
         },
         {
             text: "Fatti la doccia",
@@ -25,7 +25,7 @@ createApp({
         if(i.done === true)
            return "text-decoration-line-through"  
     },
-    taskCompleted(i) {
+    removeTask(i) {
         this.toDoList.splice(i, 1)
     },
     addTask() {
@@ -34,12 +34,16 @@ createApp({
         let newTask = {
             text: this.inputValue,
             done: false
-        }
+            }
         this.toDoList.push(newTask)
-        this.inputValue = ""
-        console.log(this.toDoList)} //input reset
+        this.inputValue = "" //input reset
+        } 
         else
         alert("inserisci qualcosa!")
+    },
+    taskCompleted(i){
+        if(i.done !== true) i.done = true
+        else i.done = false
     }
   }
 }).mount('#app')

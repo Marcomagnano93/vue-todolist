@@ -44,9 +44,9 @@
                         <!-- X components -->
                         <li
                         v-for="(el,i) in toDoList"
-                        @click="taskCompleted(i)"
+                        @click="removeTask(i)"
                         >
-                            <span id="x">X</span>
+                            <span>X</span>
                         </li>
                     </ul>
                     <ul>
@@ -54,6 +54,7 @@
                         <li 
                         v-for="(task,i) in toDoList"
                         :class="addDecoration(task)"
+                        @click="taskCompleted(task)"
                         >
                             {{ task.text }}
                             
