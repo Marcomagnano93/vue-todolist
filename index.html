@@ -25,7 +25,17 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
+                    <ul>
+                        <li 
+                        
+                        v-for="(task,i) in toDoList"
+                        :class="addDecoration(task)"
+                        >
+                            {{ task.text }}
+                            
+                        </li>
 
+                    </ul>
                 </div>
             </div>
             
